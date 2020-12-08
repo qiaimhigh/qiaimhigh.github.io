@@ -20,12 +20,12 @@
     <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
     
     <meta name="description" content="">
-    <meta name="description" content="#盒式模型    素框的最内部分是实际的内容，直接包围内容的是内边距。内边距呈现了元素的背景。内边距的边缘是边框。边框以外是外边距，外边距布置是透明的，因此不会遮挡其后的任何元素。    提示：背景图片由内容和内边距，边框组成的区域。 再这个模型中，我们应该注意：   1.当我们设置高度，宽度属性的时候，只能给盒子里面的内容设置height、width (在这里面我们应该注意的是width的默认值">
+    <meta name="description" content="盒式模型    素框的最内部分是实际的内容，直接包围内容的是内边距。内边距呈现了元素的背景。内边距的边缘是边框。边框以外是外边距，外边距布置是透明的，因此不会遮挡其后的任何元素。    提示：背景图片由内容和内边距，边框组成的区域。 再这个模型中，我们应该注意：   1.当我们设置高度，宽度属性的时候，只能给盒子里面的内容设置height、width (在这里面我们应该注意的是width的默认值是">
 <meta property="og:type" content="article">
 <meta property="og:title" content="box">
 <meta property="og:url" content="http://example.com/2020/12/07/%E7%9B%92%E5%BC%8F%E6%A8%A1%E5%9E%8B/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="#盒式模型    素框的最内部分是实际的内容，直接包围内容的是内边距。内边距呈现了元素的背景。内边距的边缘是边框。边框以外是外边距，外边距布置是透明的，因此不会遮挡其后的任何元素。    提示：背景图片由内容和内边距，边框组成的区域。 再这个模型中，我们应该注意：   1.当我们设置高度，宽度属性的时候，只能给盒子里面的内容设置height、width (在这里面我们应该注意的是width的默认值">
+<meta property="og:description" content="盒式模型    素框的最内部分是实际的内容，直接包围内容的是内边距。内边距呈现了元素的背景。内边距的边缘是边框。边框以外是外边距，外边距布置是透明的，因此不会遮挡其后的任何元素。    提示：背景图片由内容和内边距，边框组成的区域。 再这个模型中，我们应该注意：   1.当我们设置高度，宽度属性的时候，只能给盒子里面的内容设置height、width (在这里面我们应该注意的是width的默认值是">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://www.w3school.com.cn/i/ct_boxmodel.gif">
 <meta property="og:image" content="https://www.w3school.com.cn/i/ct_css_margin_collapsing_example_1.gif">
@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://www.w3school.com.cn/i/ct_css_margin_collapsing_example_4.gif">
 <meta property="og:image" content="https://www.w3school.com.cn/i/ct_css_margin_collapsing.gif">
 <meta property="article:published_time" content="2020-12-07T12:24:47.394Z">
-<meta property="article:modified_time" content="2020-12-08T12:35:57.306Z">
+<meta property="article:modified_time" content="2020-12-08T13:20:57.032Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.w3school.com.cn/i/ct_boxmodel.gif">
@@ -285,7 +285,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">1.6k</span>Reading time: <span class="post-count reading-time">5 min</span></span>
+                        <span>Word count: <span class="post-count word-count">1.9k</span>Reading time: <span class="post-count reading-time">6 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -414,7 +414,7 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>#盒式模型<br> <img src="https://www.w3school.com.cn/i/ct_boxmodel.gif" alt="盒式模型"> </p>
+        <h1 id="盒式模型"><a href="#盒式模型" class="headerlink" title="盒式模型"></a>盒式模型</h1><p> <img src="https://www.w3school.com.cn/i/ct_boxmodel.gif" alt="盒式模型"> </p>
 <blockquote>
 <p>素框的最内部分是实际的内容，直接包围内容的是内边距。内边距呈现了元素的背景。内边距的边缘是边框。边框以外是外边距，外边距布置是透明的，因此不会遮挡其后的任何元素。 </p>
 </blockquote>
@@ -439,19 +439,26 @@ height:50vh;
 <blockquote>
 <p>注释：只有普通文档流中块框的垂直外边距才会发生外边距合并。行内框、浮动框或绝对定位之间的外边距不会合并。 </p>
 </blockquote>
-<p>#盒式模型扩展</p>
-<blockquote>
-<p>在html、css中的所有元素都存在盒式模型<br>##水平<br>1.当一个元素在其父元素里面的时候，我们应该注意在编写属性值的时候，我们要注意满足以下这个等式<strong>margin-left+border-left+padding-left+width+marfin-right+border-right+padding-right=父元素内容区的宽度（必须满足）</strong>（并且这个元素在其父元素的位置由这七个元素所共同决定的）。当不满足以上等式的时候，系统将就会自己调整，且调整的时候应该满足以下几点：</p>
+<h1 id="盒式模型扩展"><a href="#盒式模型扩展" class="headerlink" title="盒式模型扩展"></a>盒式模型扩展</h1><blockquote>
+<p>在html、css中的所有元素都存在盒式模型</p>
 </blockquote>
+<h2 id="水平"><a href="#水平" class="headerlink" title="水平"></a>水平</h2><p>1.当一个元素在其父元素里面的时候，我们应该注意在编写属性值的时候，我们要注意满足以下这个等式<strong>margin-left+border-left+padding-left+width+marfin-right+border-right+padding-right=父元素内容区的宽度（必须满足）</strong>（并且这个元素在其父元素的位置由这七个元素所共同决定的）。当不满足以上等式的时候，系统将就会自己调整，且调整的时候应该满足以下几点：</p>
 <p> （1）这七个值中只有width、margin-left、margin-right能设置auto这个值，且width的默认值是auto。</p>
 <p>（2）当以上元素中都没有设置auto值的时候，系统将会默认改变margin-right来满足上述等式，如果已经设置给margin-right设置了值，但是还是未满足等式的时候，也照样会改变这个值来满足等式。</p>
 <p>（3）如果我们给这三个值其都设为auto这个值的时候，编译器将会直接将width的值加到最大，外边距都是0；如果只有margin-left的值是auto，编译器将会改变其值来满足等式；如果将两个外边距的值设置为auto，则两个均摊来将等式满足，我们可以利用这个性质来将子元素在其父元素中居中放置。</p>
 <p>（4）当子元素的width大于父元素是，margin-right将会设置为负值，来满足上述等式。</p>
-<p>##高度</p>
-<p>###父子元素：<br>1.在设置父子元素的时候，如果没有设置父元素的高度，则在设置子元素的高度时父元素会被撑开。当给父元素设置了一定的高度值时，当子元素的高度值大于父元素时，子元素会溢出，此时我们可以设定overflow这个属性来给子元素进行处理，一般常采用auto这个值。</p>
+<h2 id="高度"><a href="#高度" class="headerlink" title="高度"></a>高度</h2><h3 id="父子元素："><a href="#父子元素：" class="headerlink" title="父子元素："></a>父子元素：</h3><p>1.在设置父子元素的时候，如果没有设置父元素的高度，则在设置子元素的高度时父元素会被撑开。当给父元素设置了一定的高度值时，当子元素的高度值大于父元素时，子元素会溢出，此时我们可以设定overflow这个属性来给子元素进行处理，一般常采用auto这个值。</p>
 <p>2.子元素的上边距将会传递给父元素，当我们想要将子元素在垂直方向上放到父元素的中关键的时侯，我们应该注意一定要将他们之间的边距控制好，目前我知道的方法有两中，一种是给父元素设置一个边框，将它与子元素的上边距隔开，然后控制高度上的大小，达到目的；另一种是，用内边距将该子元素，调制中间；但是要注意的是使用以上两种方法的时候，我们应该要注意整个盒子的大小，在调整一个数据之后要注意与其相关的数据的改变。</p>
-<p>###兄弟元素</p>
-<p>1.当两个兄弟元素垂直排列的时候，他么的上下边距都默认为0。当设置值之后，加会发生垂直边距的重叠，如果上下边距的值都为正值的时候，将会发生重叠，且两个盒子在垂直方向上的间距，将会为两个正值中较大的一个；当两个值都为负值的时候，将会取绝对值较大的一个数值；当两个分别为一正一负时，间距为两个数值的和。</p>
+<h3 id="兄弟元素"><a href="#兄弟元素" class="headerlink" title="兄弟元素"></a>兄弟元素</h3><p>1.当两个兄弟元素垂直排列的时候，他么的上下边距都默认为0。当设置值之后，加会发生垂直边距的重叠，如果上下边距的值都为正值的时候，将会发生重叠，且两个盒子在垂直方向上的间距，将会为两个正值中较大的一个；当两个值都为负值的时候，将会取绝对值较大的一个数值；当两个分别为一正一负时，间距为两个数值的和。</p>
+<p><a href="https://www.w3school.com.cn/index.html" target="_blank">这是一个学习的网站</a>  </p>
+<h2 id="行内元素的盒子"><a href="#行内元素的盒子" class="headerlink" title="行内元素的盒子"></a>行内元素的盒子</h2><p> 1.行内元素也是具有盒式模型的，但是在没有经过特殊处理的情况下，其没有height，和width两个属性，它具有margin、border、padding等元素。如果在编写的过程中，需要使用到这些元素的时候，我们可以通过display这个属性来将行内元素转换成块级元素，然后进行处理。</p>
+<blockquote>
+<p>di</p>
+<p>splay的值：none该值可以将元素隐藏起来（使用该值可以实现将一个元素隐藏在一个元素之下，且不占据页面中的位置）； inline可以将行内元素转化为块级元素； block可以将行内转化为块级元素 ； inline-block 可以将元素转化为行内块级元素 ；table可以将元素转换为表格。</p>
+</blockquote>
+<blockquote>
+<p>visiblity该属性也可以通过hidden将元素隐藏起来，但是会占据页面的位置</p>
+</blockquote>
 
     </article>
     <!-- license  -->
@@ -460,7 +467,7 @@ height:50vh;
             <p>Author：<a href="http://example.com">John Doe</a>
             <p>原文链接：<a href="http://example.com/2020/12/07/%E7%9B%92%E5%BC%8F%E6%A8%A1%E5%9E%8B/">http://example.com/2020/12/07/%E7%9B%92%E5%BC%8F%E6%A8%A1%E5%9E%8B/</a>
             <p>发表日期：<a href="http://example.com/2020/12/07/%E7%9B%92%E5%BC%8F%E6%A8%A1%E5%9E%8B/">December 7th 2020, 8:24:47 pm</a>
-            <p>更新日期：<a href="http://example.com/2020/12/07/%E7%9B%92%E5%BC%8F%E6%A8%A1%E5%9E%8B/">December 8th 2020, 8:35:57 pm</a>
+            <p>更新日期：<a href="http://example.com/2020/12/07/%E7%9B%92%E5%BC%8F%E6%A8%A1%E5%9E%8B/">December 8th 2020, 9:20:57 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -603,7 +610,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%92%E5%BC%8F%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">盒式模型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%92%E5%BC%8F%E6%A8%A1%E5%9E%8B%E6%89%A9%E5%B1%95"><span class="toc-number">2.</span> <span class="toc-text">盒式模型扩展</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B0%B4%E5%B9%B3"><span class="toc-number">2.1.</span> <span class="toc-text">水平</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%AB%98%E5%BA%A6"><span class="toc-number">2.2.</span> <span class="toc-text">高度</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%88%B6%E5%AD%90%E5%85%83%E7%B4%A0%EF%BC%9A"><span class="toc-number">2.2.1.</span> <span class="toc-text">父子元素：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%84%E5%BC%9F%E5%85%83%E7%B4%A0"><span class="toc-number">2.2.2.</span> <span class="toc-text">兄弟元素</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0%E7%9A%84%E7%9B%92%E5%AD%90"><span class="toc-number">2.3.</span> <span class="toc-text">行内元素的盒子</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
