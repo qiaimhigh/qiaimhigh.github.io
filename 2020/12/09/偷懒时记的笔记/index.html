@@ -27,12 +27,10 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="笔记1.outline是用来定义元素的轮廓，它不同于border，此轮廓是不会将其他元素覆盖掉，我们可以设置在将鼠标移到一个链接上的时候，显示一个边框。 2.box-sizing可以用来设置盒子的可见框尺寸大小的计算方式，一般在默认情况下可见框的大小由内容区、内边距和边框决定的。可选值：content-box（默认值）作用宽度和高度用来设置内容区的大小；**border-box**宽度和高度设置整">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://img-blog.csdn.net/20180810104827681?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODA1NTM4MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 <meta property="article:published_time" content="2020-12-09T12:44:59.182Z">
-<meta property="article:modified_time" content="2020-12-15T09:21:25.554Z">
+<meta property="article:modified_time" content="2020-12-15T09:26:26.006Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdn.net/20180810104827681?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODA1NTM4MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     
@@ -459,13 +457,33 @@ height:50vh;
 
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
 
+
+
 <p> 来达到最终的目的</p>
 <blockquote>
 <p>:after 伪元素在元素之后添加内容。可以用content:url();设置添加的内容</p>
 </blockquote>
 <p>5.<strong><em>clearfix</em></strong>可以利用以下代码来解决外边距重叠和高度塌陷问题，使用时只需将元素的class设置为clearfix即可</p>
 <p>样式代码</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line"></span><br><span class="line">​	.clearfix::before,</span><br><span class="line"></span><br><span class="line">​	.clearfix::after&#123;</span><br><span class="line"></span><br><span class="line">​				content:&#39;&#39;,</span><br><span class="line"></span><br><span class="line">​				dispaly:block;</span><br><span class="line"></span><br><span class="line">​				clear:both;</span><br><span class="line"></span><br><span class="line">​		&#125;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;style&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<style>
+
+​    .clearfix::before,
+
+​    .clearfix::after{
+
+​                content:'',
+
+​                dispaly:block;
+
+​                clear:both;
+
+​        }
+
+</style>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
 
 
 
@@ -492,29 +510,77 @@ height:50vh;
 <p>相关代码：</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;style type&#x3D;&quot;text&#x2F;css&quot;&gt;</span><br><span class="line">		.box &#123;</span><br><span class="line">			background: red;</span><br><span class="line">			width: 100px;</span><br><span class="line">			height: 100px;</span><br><span class="line">			float: left;</span><br><span class="line">			margin: 5px;</span><br><span class="line">		&#125;</span><br><span class="line">		.two &#123;</span><br><span class="line">			position: relative;</span><br><span class="line">			top: 50px;</span><br><span class="line">			left: 50px;</span><br><span class="line">		&#125;</span><br><span class="line">	&lt;&#x2F;style&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div class&#x3D;&quot;box&quot; &gt;One&lt;&#x2F;div&gt;</span><br><span class="line">	&lt;div class&#x3D;&quot;box  two&quot; &gt;Two&lt;&#x2F;div&gt;</span><br><span class="line">	&lt;div class&#x3D;&quot;box&quot; &gt;Three&lt;&#x2F;div&gt;</span><br><span class="line">	&lt;div class&#x3D;&quot;box&quot;&gt;Four&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">效果：</span><br><span class="line"></span><br><span class="line">![相对定位](https:&#x2F;&#x2F;img-blog.csdn.net&#x2F;20180810105007686?watermark&#x2F;2&#x2F;text&#x2F;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODA1NTM4MQ&#x3D;&#x3D;&#x2F;font&#x2F;5a6L5L2T&#x2F;fontsize&#x2F;400&#x2F;fill&#x2F;I0JBQkFCMA&#x3D;&#x3D;&#x2F;dissolve&#x2F;70)</span><br><span class="line"></span><br><span class="line">## 绝对定位</span><br><span class="line"></span><br><span class="line">当元素的position值设置为absolute的时候，元素开启绝对定位。</span><br><span class="line"></span><br><span class="line">***特点***：</span><br><span class="line"></span><br><span class="line">1.开启绝对定位的元素，如果不设置偏移量则位置不会发生变化</span><br><span class="line"></span><br><span class="line">2.开启绝对定位后，元素会从文档流中脱离</span><br><span class="line"></span><br><span class="line">3.开启绝对定位会改变元素的性质，行内变成块，块的高度会被内容撑开</span><br><span class="line"></span><br><span class="line">4.绝对定位会使元素提升一个层级</span><br><span class="line"></span><br><span class="line">5.绝对定位是相对于其包含块进行定位的</span><br><span class="line"></span><br><span class="line">&gt; 包含块</span><br><span class="line">&gt;</span><br><span class="line">&gt; 正常情况下：包含块就是离目前元素最近的祖先块级元素</span><br><span class="line">&gt;</span><br><span class="line">&gt; 绝对定位的包含块：距离它最近的没有开启了定位的祖先元素，如果没有元素没有开启定位则**根元素**就是它的包含块</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">效果：</span><br><span class="line"></span><br><span class="line">![相对定位](https:&#x2F;&#x2F;img-blog.csdn.net&#x2F;20180810105007686?watermark&#x2F;2&#x2F;text&#x2F;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODA1NTM4MQ&#x3D;&#x3D;&#x2F;font&#x2F;5a6L5L2T&#x2F;fontsize&#x2F;400&#x2F;fill&#x2F;I0JBQkFCMA&#x3D;&#x3D;&#x2F;dissolve&#x2F;70)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 绝对定位</span><br><span class="line"></span><br><span class="line">当元素的position值设置为absolute的时候，元素开启绝对定位。</span><br><span class="line"></span><br><span class="line">***特点***：</span><br><span class="line"></span><br><span class="line">1.开启绝对定位的元素，如果不设置偏移量则位置不会发生变化</span><br><span class="line"></span><br><span class="line">2.开启绝对定位后，元素会从文档流中脱离</span><br><span class="line"></span><br><span class="line">3.开启绝对定位会改变元素的性质，行内变成块，块的高度会被内容撑开</span><br><span class="line"></span><br><span class="line">4.绝对定位会使元素提升一个层级</span><br><span class="line"></span><br><span class="line">5.绝对定位是相对于其包含块进行定位的</span><br><span class="line"></span><br><span class="line">&gt; 包含块</span><br><span class="line">&gt;</span><br><span class="line">&gt; 正常情况下：包含块就是离目前元素最近的祖先块级元素</span><br><span class="line">&gt;</span><br><span class="line">&gt; 绝对定位的包含块：距离它最近的没有开启了定位的祖先元素，如果没有元素没有开启定位则**根元素**就是它的包含块</span><br><span class="line">&gt;</span><br><span class="line">&gt; </span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;style type&#x3D;&quot;text&#x2F;css&quot;&gt;</span><br><span class="line">		.box &#123;</span><br><span class="line">			background: red;</span><br><span class="line">			width: 100px;</span><br><span class="line">			height: 100px;</span><br><span class="line">			float: left;</span><br><span class="line">			margin: 5px;</span><br><span class="line">		&#125;</span><br><span class="line">		.two &#123;</span><br><span class="line">			position: absolute;</span><br><span class="line">			top: 50px;</span><br><span class="line">			left: 50px;</span><br><span class="line">		&#125;</span><br><span class="line">	&lt;&#x2F;style&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div class&#x3D;&quot;box&quot; &gt;One&lt;&#x2F;div&gt;</span><br><span class="line">	&lt;div class&#x3D;&quot;box  two&quot; &gt;Two&lt;&#x2F;div&gt;</span><br><span class="line">	&lt;div class&#x3D;&quot;box&quot; &gt;Three&lt;&#x2F;div&gt;</span><br><span class="line">	&lt;div class&#x3D;&quot;box&quot;&gt;Four&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p>效果：</p>
-<p><img src="https://img-blog.csdn.net/20180810104827681?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODA1NTM4MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="绝对定位"></p>
-<h2 id="固定定位"><a href="#固定定位" class="headerlink" title="固定定位"></a>固定定位</h2><p>将元素的position属性值设置为fixed，将会开启元素的固定定位。</p>
-<p>固定定位也是一种绝对定位，所以固定定位的大部分特点就和绝对定位是一样的。但是不同在固定定位是永远以**<em>视窗**</em>为参考进行定位的，并且元素不会随着网页的滚动条滚动.</p>
-<p>固定定位的最常见的一种用途是在页面中创建一个固定头部、固定脚部或者固定侧边栏，不需使用margin、border、padding。</p>
-<p><code>position:fixed;</code></p>
-<h2 id="粘滞定位"><a href="#粘滞定位" class="headerlink" title="粘滞定位"></a>粘滞定位</h2><p>当元素的position属性开启sticky属性值的时候，元素将会开启粘滞定位。</p>
-<p>但是该定位的兼容性不是很好，所以不常用；它的特点和相对定位的特点基本一致，不同的就是当该元素到达一定的位置的时候，将会停止移动，粘滞定位的参照也是以<strong>包含块</strong>为基准的。</p>
-<h3 id="开启定位对布局的影响"><a href="#开启定位对布局的影响" class="headerlink" title="开启定位对布局的影响"></a>开启定位对布局的影响</h3><h5 id="水平布局"><a href="#水平布局" class="headerlink" title="水平布局"></a>水平布局</h5><p>水平布局的等式就需要添加 left 和 right 两个值，此时我们在水平距离上面的等式应该满足</p>
- <p color="red">left + margin-left + border-left + padding-left + width + padding-right + margin-right + border-right + right=包含框的可见区大小</p>
+<pre><code>
 
-<blockquote>
-<p>应该注意left 和right 的值默认是auto</p>
-</blockquote>
-<p>在这九个元素中，如果有属性值为auto的元素的话，运算规则和之前的一样，当没有属性值为auto的时候，编译器会改变right的值来使上述等式满足。（要注意的是，当我们没有设置left和right的之的时候，他们默认为auto，这样子我们在设值的时候，应该要注意。）</p>
-<h5 id="垂直布局"><a href="#垂直布局" class="headerlink" title="垂直布局"></a>垂直布局</h5><p>当开启绝对定位的时候，在垂直高度上面，就必须要满足以下等式：</p>
-<p>top + margin-top + border-top + padding-top + height + padding-bottom + margin-bottom + border-bottom=包含块的高度</p>
-<p>当没有元素的属性值设置为auto的时候 ，编译器会修改bottom的值，来满足以上等式。其他的规则和上述水平方向上的规则是一样的。</p>
-<p>我们可以利用以上的属性，来使元素在包含块里面局中。</p>
+
+效果：
+
+![绝对定位](https://img-blog.csdn.net/20180810104827681?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODA1NTM4MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+
+
+## 固定定位
+
+将元素的position属性值设置为fixed，将会开启元素的固定定位。
+
+固定定位也是一种绝对定位，所以固定定位的大部分特点就和绝对定位是一样的。但是不同在固定定位是永远以***视窗***为参考进行定位的，并且元素不会随着网页的滚动条滚动.
+
+固定定位的最常见的一种用途是在页面中创建一个固定头部、固定脚部或者固定侧边栏，不需使用margin、border、padding。
+
+`position:fixed;`
+
+## 粘滞定位
+
+当元素的position属性开启sticky属性值的时候，元素将会开启粘滞定位。
+
+但是该定位的兼容性不是很好，所以不常用；它的特点和相对定位的特点基本一致，不同的就是当该元素到达一定的位置的时候，将会停止移动，粘滞定位的参照也是以**包含块**为基准的。
+
+
+
+### 开启定位对布局的影响
+
+##### 水平布局
+
+水平布局的等式就需要添加 left 和 right 两个值，此时我们在水平距离上面的等式应该满足
+
+ &lt;p color=&quot;red&quot;&gt;left + margin-left + border-left + padding-left + width + padding-right + margin-right + border-right + right=包含框的可见区大小&lt;/p&gt;
+
+&gt; 应该注意left 和right 的值默认是auto
+
+在这九个元素中，如果有属性值为auto的元素的话，运算规则和之前的一样，当没有属性值为auto的时候，编译器会改变right的值来使上述等式满足。（要注意的是，当我们没有设置left和right的之的时候，他们默认为auto，这样子我们在设值的时候，应该要注意。）
+
+##### 垂直布局
+
+当开启绝对定位的时候，在垂直高度上面，就必须要满足以下等式：
+
+top + margin-top + border-top + padding-top + height + padding-bottom + margin-bottom + border-bottom=包含块的高度
+
+当没有元素的属性值设置为auto的时候 ，编译器会修改bottom的值，来满足以上等式。其他的规则和上述水平方向上的规则是一样的。
+
+
+
+我们可以利用以上的属性，来使元素在包含块里面局中。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</code></pre>
 
     </article>
     <!-- license  -->
@@ -523,7 +589,7 @@ height:50vh;
             <p>Author：<a href="http://example.com">John Doe</a>
             <p>原文链接：<a href="http://example.com/2020/12/09/%E5%81%B7%E6%87%92%E6%97%B6%E8%AE%B0%E7%9A%84%E7%AC%94%E8%AE%B0/">http://example.com/2020/12/09/%E5%81%B7%E6%87%92%E6%97%B6%E8%AE%B0%E7%9A%84%E7%AC%94%E8%AE%B0/</a>
             <p>发表日期：<a href="http://example.com/2020/12/09/%E5%81%B7%E6%87%92%E6%97%B6%E8%AE%B0%E7%9A%84%E7%AC%94%E8%AE%B0/">December 9th 2020, 8:44:59 pm</a>
-            <p>更新日期：<a href="http://example.com/2020/12/09/%E5%81%B7%E6%87%92%E6%97%B6%E8%AE%B0%E7%9A%84%E7%AC%94%E8%AE%B0/">December 15th 2020, 5:21:25 pm</a>
+            <p>更新日期：<a href="http://example.com/2020/12/09/%E5%81%B7%E6%87%92%E6%97%B6%E8%AE%B0%E7%9A%84%E7%AC%94%E8%AE%B0/">December 15th 2020, 5:26:26 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -666,7 +732,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">笔记</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B5%AE%E5%8A%A8"><span class="toc-number"></span> <span class="toc-text">浮动</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B5%AE%E5%8A%A8%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">0.0.1.</span> <span class="toc-text">浮动的特点</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E8%A6%81%E7%9A%84%E7%AC%94%E8%AE%B0"><span class="toc-number"></span> <span class="toc-text">重要的笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">高度塌陷：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9A%E4%BD%8D"><span class="toc-number"></span> <span class="toc-text">定位</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%82%E7%BA%A7"><span class="toc-number">1.</span> <span class="toc-text">层级</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%AF%B9%E5%AE%9A%E4%BD%8D"><span class="toc-number"></span> <span class="toc-text">相对定位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BA%E5%AE%9A%E5%AE%9A%E4%BD%8D"><span class="toc-number"></span> <span class="toc-text">固定定位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B2%98%E6%BB%9E%E5%AE%9A%E4%BD%8D"><span class="toc-number"></span> <span class="toc-text">粘滞定位</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%90%AF%E5%AE%9A%E4%BD%8D%E5%AF%B9%E5%B8%83%E5%B1%80%E7%9A%84%E5%BD%B1%E5%93%8D"><span class="toc-number">1.</span> <span class="toc-text">开启定位对布局的影响</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B0%B4%E5%B9%B3%E5%B8%83%E5%B1%80"><span class="toc-number">1.0.1.</span> <span class="toc-text">水平布局</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9E%82%E7%9B%B4%E5%B8%83%E5%B1%80"><span class="toc-number">1.0.2.</span> <span class="toc-text">垂直布局</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">笔记</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B5%AE%E5%8A%A8"><span class="toc-number"></span> <span class="toc-text">浮动</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B5%AE%E5%8A%A8%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">0.0.1.</span> <span class="toc-text">浮动的特点</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E8%A6%81%E7%9A%84%E7%AC%94%E8%AE%B0"><span class="toc-number"></span> <span class="toc-text">重要的笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">高度塌陷：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9A%E4%BD%8D"><span class="toc-number"></span> <span class="toc-text">定位</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%82%E7%BA%A7"><span class="toc-number">1.</span> <span class="toc-text">层级</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%AF%B9%E5%AE%9A%E4%BD%8D"><span class="toc-number"></span> <span class="toc-text">相对定位</span></a>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
