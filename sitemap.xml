@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://qiaimhigh.gothub.io/myself/index.html</loc>
+    
+    <lastmod>2022-05-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://qiaimhigh.gothub.io/about/index.html</loc>
+    
+    <lastmod>2022-05-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://qiaimhigh.gothub.io/timeline/index.html</loc>
+    
+    <lastmod>2022-05-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://qiaimhigh.gothub.io/link/index.html</loc>
+    
+    <lastmod>2022-05-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://qiaimhigh.gothub.io/messageboard/index.html</loc>
+    
+    <lastmod>2022-05-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://qiaimhigh.gothub.io/tags/index.html</loc>
+    
+    <lastmod>2022-05-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://qiaimhigh.gothub.io/categories/index.html</loc>
+    
+    <lastmod>2022-05-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://qiaimhigh.gothub.io/2022/05/29/cors/</loc>
+    
+    <lastmod>2022-05-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://qiaimhigh.gothub.io/2022/05/29/hello-world/</loc>
+    
+    <lastmod>2022-05-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://qiaimhigh.gothub.io/2022/05/29/vue/</loc>
+    
+    <lastmod>2022-04-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+
+  <url>
+    <loc>https://qiaimhigh.gothub.io/</loc>
+    <lastmod>2022-05-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  
+
+  
+</urlset>
