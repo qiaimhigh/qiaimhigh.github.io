@@ -1,0 +1,221 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Richie | Richie</title><meta name="author" content="Richie"><meta name="copyright" content="Richie"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="npm命令npm介绍npm前言：我们在日常使用npm下载包的时候，可能就是在网上搜一下下载教程，然后按照那些文章中所介绍的命令去下载。我相信在执行那些命令的时候，大部分人都不知道，到底为什么要这样子写，只知道使用这些命令可以下载到自己想使用的包。如果你想了解那些命令是什么意思的话，那么希望这篇文章可以带给你一些收获。 认识npmnpm是一个NodeJS包管理器和分发工具，当我们需要使用npm命令">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Richie">
+<meta property="og:url" content="https://qiaimhigh.gothub.io/2022/05/30/npm/index.html">
+<meta property="og:site_name" content="Richie">
+<meta property="og:description" content="npm命令npm介绍npm前言：我们在日常使用npm下载包的时候，可能就是在网上搜一下下载教程，然后按照那些文章中所介绍的命令去下载。我相信在执行那些命令的时候，大部分人都不知道，到底为什么要这样子写，只知道使用这些命令可以下载到自己想使用的包。如果你想了解那些命令是什么意思的话，那么希望这篇文章可以带给你一些收获。 认识npmnpm是一个NodeJS包管理器和分发工具，当我们需要使用npm命令">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-f67a27e2c7bac6c6b1a1123f093c074e_r.jpg?source=172ae18b">
+<meta property="article:published_time" content="2022-05-30T09:03:07.636Z">
+<meta property="article:modified_time" content="2022-05-30T09:03:44.809Z">
+<meta property="article:author" content="Richie">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic4.zhimg.com/v2-f67a27e2c7bac6c6b1a1123f093c074e_r.jpg?source=172ae18b"><link rel="shortcut icon" href="/./img/favicon.png"><link rel="canonical" href="https://qiaimhigh.gothub.io/2022/05/30/npm/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'mediumZoom',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Richie',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-05-30 17:03:44'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="Richie" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/./img/ioio.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/timeline/"><i class="fa-fw fa fa-bell"></i><span> 日志</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-list"></i><span> 菜单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/about"><i class="fa-fw /about/"></i><span> 0</span></a></li><li><a class="site-page child" href="/myself"><i class="fa-fw /myself/"></i><span> 1</span></a></li><li><a class="site-page child" href="/butterfly"><i class="fa-fw https://github.com/jerryc127/hexo-theme-butterfly/"></i><span> 2</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://pic4.zhimg.com/v2-f67a27e2c7bac6c6b1a1123f093c074e_r.jpg?source=172ae18b')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Richie</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/timeline/"><i class="fa-fw fa fa-bell"></i><span> 日志</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-list"></i><span> 菜单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/about"><i class="fa-fw /about/"></i><span> 0</span></a></li><li><a class="site-page child" href="/myself"><i class="fa-fw /myself/"></i><span> 1</span></a></li><li><a class="site-page child" href="/butterfly"><i class="fa-fw https://github.com/jerryc127/hexo-theme-butterfly/"></i><span> 2</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">无题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-05-30T09:03:07.636Z" title="发表于 2022-05-30 17:03:07">2022-05-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-30T09:03:44.809Z" title="更新于 2022-05-30 17:03:44">2022-05-30</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+<h2 id="npm命令"><a href="#npm命令" class="headerlink" title="npm命令"></a>npm命令</h2><h1 id="npm介绍"><a href="#npm介绍" class="headerlink" title="npm介绍"></a>npm介绍</h1><h2 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h2><p>前言：我们在日常使用npm下载包的时候，可能就是在网上搜一下下载教程，然后按照那些文章中所介绍的命令去下载。我相信在执行那些命令的时候，大部分人都不知道，到底为什么要这样子写，只知道使用这些命令可以下载到自己想使用的包。如果你想了解那些命令是什么意思的话，那么希望这篇文章可以带给你一些收获。</p>
+<h3 id="认识npm"><a href="#认识npm" class="headerlink" title="认识npm"></a>认识npm</h3><p>npm是一个NodeJS包管理器和分发工具，当我们需要使用npm命令的时候，我们需要安装一下Node.js，不然我们就不能使用npm命令。</p>
+<p>Node.js下载网址：<a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a></p>
+<p>我们会看到如下界面：</p>
+<p><img src="https://img-blog.csdnimg.cn/f41ba9cb6aab4a46b15a0b3620a6a940.png" alt="请添加图片描述"></p>
+<p>我们会看到有一个LTS版本和一个Current版本，那么我们该如何选择呢？</p>
+<p>我来先给咱们解释一下：其实从版本号就可以看出一个新一个老。Current就是当前最新的版本，最新的功能特性都在这里面了。就是拿来给你试用测试的，要是大家都用得还好，功能稳定了，就发布到LTS版本。所以LTS就是稳定版。</p>
+<p>在这里我建议大家选择LTS版本的，它不仅可以满足我们的日常学习，而且主要的是它用着稳定，简直香喷喷。</p>
+<p>当我们安装好Node之后，因为npm是Node自带的一个包管理器，所以所我们不需要安装，就可以直接使用npm去运行命令啦。</p>
+<p>如果想查看自己的node的版本号，我们可以使用win+R组合键，打开cmd，在里面输入node -v就可以查看自己所安装的Node的版本号了。</p>
+<h3 id="npm命令-1"><a href="#npm命令-1" class="headerlink" title="npm命令"></a>npm命令</h3><p>在这里我会将平时经常用到的npm命令展示给大家。</p>
+<h5 id="1-下载包命令"><a href="#1-下载包命令" class="headerlink" title="1.下载包命令"></a>1.下载包命令</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install 包的名称  // 也可以简写为 npm i 包的名称</span><br></pre></td></tr></table></figure>
+
+<p>在这里我给大家推荐一个搜索需要使用的包的网址：<a target="_blank" rel="noopener" href="https://www.npmjs.com/%EF%BC%8C%E5%9C%A8%E8%BF%99%E4%B8%AA%E7%BD%91%E7%AB%99%E4%B8%8A%E9%9D%A2%EF%BC%8C%E5%8F%AA%E8%A6%81%E4%BD%A0%E6%9C%89%E8%B6%B3%E5%A4%9F%E7%9A%84%E8%80%90%E5%BF%83%E5%8E%BB%E5%AF%BB%E6%89%BE%E6%89%80%E6%83%B3%E8%A6%81%E7%9A%84%E5%8C%85%EF%BC%8C%E4%BD%A0%E5%8F%AF%E4%BB%A5%E6%89%BE%E5%88%B0%E5%A5%BD%E5%A4%9A%E4%BC%98%E7%A7%80%E5%A5%BD%E7%94%A8%E7%9A%84%E5%8C%85%E3%80%82%E5%90%8C%E6%97%B6%E4%B9%9F%E4%BB%8B%E7%BB%8D%E4%BA%86%E4%B8%8B%E8%BD%BD%E8%BF%99%E5%8C%85%E7%9A%84%E5%91%BD%E4%BB%A4%E3%80%82">https://www.npmjs.com/，在这个网站上面，只要你有足够的耐心去寻找所想要的包，你可以找到好多优秀好用的包。同时也介绍了下载这包的命令。</a></p>
+<p>但是大家在下载一些包的时候，是不是速度经常很慢很慢。这是因为npm默认的是当国外的网站上下载，所以说速度会很慢很慢。在这里我们为了提高下载的速度，可以使用国内的淘宝镜像。</p>
+<p>那我们如果知道自己当前的默认下载路径呢，在这里我们可以使用：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config get registry  //查询当前自己所使用的默认下载路径</span><br></pre></td></tr></table></figure>
+
+<p>当我们需要切换到淘宝镜像的时候，我们可以执行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry=https://registry.npm.taobao.org/     //切换到淘宝镜像</span><br></pre></td></tr></table></figure>
+
+<p>到这里你有没有觉得上面的切换代码的方式很麻烦，需要写好长一串代码，而且一个不留神写错了，也运行不了。在这里我给大家推荐一个很好用的小工具，它可以快速的查看和切换下包的镜像源——-nrm。我们可以通过</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm i nrm -g // 将nrm安装为全局可用的工具</span><br><span class="line">//查看所有的镜像源</span><br><span class="line">nrm ls</span><br><span class="line">// 切换下包的镜像</span><br><span class="line">nrm use taobao</span><br></pre></td></tr></table></figure>
+
+<p>当我们执行了<code>nrm ls</code>命令后，可以得到下图：</p>
+<p><img src="https://img-blog.csdnimg.cn/4c845742794b4916825de63bbe869392.png" alt="请添加图片描述"></p>
+<p>我们可以根据返回的目录，选择想要使用的镜像源，然后输入  <code>nrm use  [镜像源]</code>，就可以切换到相应的镜像源去下载了。是不是使用了这个工具之后就方便了好多。</p>
+<p>全局包命令：</p>
+<p>会将包安装为全局包，默认会安装在：<code>C:\Users\XXXXX\AppData\Roaming\npm\node_modules</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install 包名 -g</span><br></pre></td></tr></table></figure>
+
+<p>我们在平时的下载中也会经常遇到:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm i 包名 -D    // devDependencies，开发依赖包，只在开发期间使用</span><br><span class="line">或</span><br><span class="line">npm i 包名 --save-dev    // devDependencies</span><br><span class="line">或</span><br><span class="line">npm i 包名 --save   // dependencies，核心依赖包，在开发期间和项目上线之后都会用到</span><br></pre></td></tr></table></figure>
+
+<p>以上三种中，我们前两种没啥区别（<code>-D</code>就是<code>--save-dev</code>的缩写）。在我们安装包的时候，会在我们多安装的目录里面，创建一个<code>packpage.json</code>和<code>packpage-lock.json</code>的配置文件，如果没有<code>packpage.json</code>文件的话，我们可以使用<code>npm init -y</code>来创建配置文件。在<code>pack-lock.json</code>中写入了一些项目的名称、下载的包的名称、版本号、下载地址等。在<code>packpage.json</code>中，会存在<code>dependencies</code> 和<code>devDependencies</code>，当我们使用前两个命令时，下载的包名添加在<code>devDependencies</code>中，使用最后一个会添加包名到<code>dependencies</code>中。</p>
+<p>现在我来解释以下：，一些包我们在发布后用不到它，而只是在我们开发才用到它，那么就使用<code>--save-dev</code>比较好，在<code>devDependencies</code>下创建模块。而<code>dependencies</code> 下的模块，则是我们发布后还需要依赖的模块，譬如像jQuery库或者Angular框架类似的，我们在开发完后后肯定还要依赖它们，否则就运行不了。</p>
+<h5 id="2-卸载包命令"><a href="#2-卸载包命令" class="headerlink" title="2.卸载包命令"></a>2.卸载包命令</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm remove 包名 [-g] 简写 npm rm 包名  </span><br><span class="line">或</span><br><span class="line">npm uninstall 包名</span><br><span class="line">需要注意的是：以上两个没啥区别  只不过是 remove 是 uninstall 的别名，它的别名还有，un、rm、unlink</span><br></pre></td></tr></table></figure>
+
+<h5 id="3-更新包"><a href="#3-更新包" class="headerlink" title="3.更新包"></a>3.更新包</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm update 包名  简写：npm up 包名 </span><br></pre></td></tr></table></figure>
+
+<h5 id="4-查看已安装的包"><a href="#4-查看已安装的包" class="headerlink" title="4.查看已安装的包"></a>4.查看已安装的包</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm list [-g]  简写 npm ls [-g]</span><br></pre></td></tr></table></figure>
+
+<h5 id="5-清除缓存"><a href="#5-清除缓存" class="headerlink" title="5.清除缓存"></a>5.清除缓存</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm cache clean --force</span><br></pre></td></tr></table></figure>
+
+<h5 id="6-npm-查看命令"><a href="#6-npm-查看命令" class="headerlink" title="6.npm 查看命令"></a>6.npm 查看命令</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">npm root  # 查看项目中模块所在的目录</span><br><span class="line">npm root -g  # 查看全局安装的模块所在目录</span><br><span class="line">npm list 或者 npm ls  # 查看本地已安装模块的清单列表</span><br><span class="line">npm view jquery dependencies  # 查看某个包对于各种包的依赖关系</span><br><span class="line">npm view jquery version  # 查看jquery最新的版本号</span><br><span class="line">npm view jquery versions  # 查看所有jquery历史版本号（很实用）</span><br><span class="line">npm view jquery  # 查看最新的jquery版本的信息</span><br><span class="line">npm info jquery  # 查看jquery的详细信息，等同于上面的npm view jquery</span><br><span class="line">npm list jquery 或 npm ls jquery  # 查看本地已安装的jquery的详细信息</span><br><span class="line">npm view jquery repository.url  # 查看jquery包的来源地址</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li>npm 其他命令</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">npm cache clean  # 清除npm的缓存</span><br><span class="line">npm prune  # 清除项目中没有被使用的包</span><br><span class="line">npm outdated  # 检查模块是否已经过时</span><br><span class="line">npm repo jquery  # 会打开默认浏览器跳转到github中jquery的页面</span><br><span class="line">npm docs jquery  # 会打开默认浏览器跳转到github中jquery的<span class="variable constant_">README</span>.<span class="property">MD</span>文件信息</span><br><span class="line">npm home jquery  # 会打开默认浏览器跳转到github中jquery的主页</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="模块加载机制"><a href="#模块加载机制" class="headerlink" title="模块加载机制"></a>模块加载机制</h3><h5 id="优先从缓存缓存中加载"><a href="#优先从缓存缓存中加载" class="headerlink" title="优先从缓存缓存中加载"></a>优先从缓存缓存中加载</h5><p>模块在第一次加载后会被缓存。这也就意味了多次调用require不会导致代码被执行多次。</p>
+<h5 id="内置模块加载的优先级最高"><a href="#内置模块加载的优先级最高" class="headerlink" title="内置模块加载的优先级最高"></a>内置模块加载的优先级最高</h5><h5 id="自定义模块："><a href="#自定义模块：" class="headerlink" title="自定义模块："></a>自定义模块：</h5><p>必须指定以 .&#x2F; 或 ..&#x2F;开头的路径标识符，若不指定，node则会将内置模块或者第三方模块进行加载。同时，如果省略文件的扩展名，则会按照顺序分别尝试加载以下文件：</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1.按照确切的文件名进行加载</span><br><span class="line"></span><br><span class="line">2.补全.js扩展名进行加载</span><br><span class="line"></span><br><span class="line">3.不全.json扩展名进行加载</span><br><span class="line"></span><br><span class="line">4.不全.node扩展名进行加载</span><br><span class="line"></span><br><span class="line">5.加载失败，终端报错</span><br></pre></td></tr></table></figure>
+
+<h5 id="第三方模块"><a href="#第三方模块" class="headerlink" title="第三方模块"></a>第三方模块</h5><p>如果传递给require()的模块不是一个内置模块，也不是自定义模块，则<code>Node.js</code>会从当前模块的目录开始，尝试从<code>/node_modules</code>文价夹中加载第三方模块。</p>
+<h5 id="把目录作为加载模块"><a href="#把目录作为加载模块" class="headerlink" title="把目录作为加载模块"></a>把目录作为加载模块</h5><p>再将目录作为加载模块时，</p>
+<p>1.首先，会查找目录下面的<code>packpage.json</code>的文件，然后在里面寻找main属性，作为require的加载的入口。</p>
+<p>2.如果第一步查找失败，则会在文件夹下面查找<code>index.js</code> 文件</p>
+<p>3.如以上两步全都失败，则会打印错误信息，报告，模块缺失</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://qiaimhigh.gothub.io">Richie</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://qiaimhigh.gothub.io/2022/05/30/npm/">https://qiaimhigh.gothub.io/2022/05/30/npm/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://qiaimhigh.gothub.io" target="_blank">Richie</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://pic4.zhimg.com/v2-f67a27e2c7bac6c6b1a1123f093c074e_r.jpg?source=172ae18b" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/05/30/this%E6%8C%87%E5%90%91/"><img class="next-cover" src="https://pic4.zhimg.com/v2-f67a27e2c7bac6c6b1a1123f093c074e_r.jpg?source=172ae18b" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info"></div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/./img/ioio.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Richie</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/qiaimhigh"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/qiaimhigh" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:richieemail@163.com" target="_blank" title="Email"><i class="fa-solid fa-envelope"></i></a><a class="social-icon" href="https://blog.csdn.net/Spongebobna" target="_blank" title="CSDN"><i class="fa fa-book-open"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">文章中有哪些不对的地方，欢迎大家及时帮我纠正，谢谢！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#npm%E5%91%BD%E4%BB%A4"><span class="toc-number">1.</span> <span class="toc-text">npm命令</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#npm%E4%BB%8B%E7%BB%8D"><span class="toc-number"></span> <span class="toc-text">npm介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#npm"><span class="toc-number">1.</span> <span class="toc-text">npm</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A4%E8%AF%86npm"><span class="toc-number">1.1.</span> <span class="toc-text">认识npm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#npm%E5%91%BD%E4%BB%A4-1"><span class="toc-number">1.2.</span> <span class="toc-text">npm命令</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E4%B8%8B%E8%BD%BD%E5%8C%85%E5%91%BD%E4%BB%A4"><span class="toc-number">1.2.0.1.</span> <span class="toc-text">1.下载包命令</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E5%8D%B8%E8%BD%BD%E5%8C%85%E5%91%BD%E4%BB%A4"><span class="toc-number">1.2.0.2.</span> <span class="toc-text">2.卸载包命令</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E6%9B%B4%E6%96%B0%E5%8C%85"><span class="toc-number">1.2.0.3.</span> <span class="toc-text">3.更新包</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-%E6%9F%A5%E7%9C%8B%E5%B7%B2%E5%AE%89%E8%A3%85%E7%9A%84%E5%8C%85"><span class="toc-number">1.2.0.4.</span> <span class="toc-text">4.查看已安装的包</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-%E6%B8%85%E9%99%A4%E7%BC%93%E5%AD%98"><span class="toc-number">1.2.0.5.</span> <span class="toc-text">5.清除缓存</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-npm-%E6%9F%A5%E7%9C%8B%E5%91%BD%E4%BB%A4"><span class="toc-number">1.2.0.6.</span> <span class="toc-text">6.npm 查看命令</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E5%9D%97%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6"><span class="toc-number">1.3.</span> <span class="toc-text">模块加载机制</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BC%98%E5%85%88%E4%BB%8E%E7%BC%93%E5%AD%98%E7%BC%93%E5%AD%98%E4%B8%AD%E5%8A%A0%E8%BD%BD"><span class="toc-number">1.3.0.1.</span> <span class="toc-text">优先从缓存缓存中加载</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97%E5%8A%A0%E8%BD%BD%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7%E6%9C%80%E9%AB%98"><span class="toc-number">1.3.0.2.</span> <span class="toc-text">内置模块加载的优先级最高</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9D%97%EF%BC%9A"><span class="toc-number">1.3.0.3.</span> <span class="toc-text">自定义模块：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A8%A1%E5%9D%97"><span class="toc-number">1.3.0.4.</span> <span class="toc-text">第三方模块</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8A%8A%E7%9B%AE%E5%BD%95%E4%BD%9C%E4%B8%BA%E5%8A%A0%E8%BD%BD%E6%A8%A1%E5%9D%97"><span class="toc-number">1.3.0.5.</span> <span class="toc-text">把目录作为加载模块</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/05/30/npm/" title="无题"><img src="https://pic4.zhimg.com/v2-f67a27e2c7bac6c6b1a1123f093c074e_r.jpg?source=172ae18b" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/05/30/npm/" title="无题">无题</a><time datetime="2022-05-30T09:03:07.636Z" title="发表于 2022-05-30 17:03:07">2022-05-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/30/this%E6%8C%87%E5%90%91/" title="无题"><img src="https://pic4.zhimg.com/v2-f67a27e2c7bac6c6b1a1123f093c074e_r.jpg?source=172ae18b" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/05/30/this%E6%8C%87%E5%90%91/" title="无题">无题</a><time datetime="2022-05-30T09:02:13.247Z" title="发表于 2022-05-30 17:02:13">2022-05-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/30/NodeJs/" title="无题"><img src="https://n.sinaimg.cn/sinakd20116/600/w1920h1080/20201013/99db-kakmcxe5072956.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/05/30/NodeJs/" title="无题">无题</a><time datetime="2022-05-30T09:00:39.019Z" title="发表于 2022-05-30 17:00:39">2022-05-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/29/cors/" title="无题"><img src="https://n.sinaimg.cn/sinakd20116/600/w1920h1080/20201013/99db-kakmcxe5072956.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/05/29/cors/" title="无题">无题</a><time datetime="2022-05-29T08:49:00.694Z" title="发表于 2022-05-29 16:49:00">2022-05-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/29/vue/" title="无题"><img src="https://n.sinaimg.cn/sinakd20116/600/w1920h1080/20201013/99db-kakmcxe5072956.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/05/29/vue/" title="无题">无题</a><time datetime="2022-05-29T06:02:21.099Z" title="发表于 2022-05-29 14:02:21">2022-05-29</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://pic4.zhimg.com/v2-f67a27e2c7bac6c6b1a1123f093c074e_r.jpg?source=172ae18b')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Richie</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

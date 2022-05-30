@@ -2,6 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://qiaimhigh.gothub.io/2022/05/30/npm/</loc>
+    
+    <lastmod>2022-05-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://qiaimhigh.gothub.io/2022/05/30/this%E6%8C%87%E5%90%91/</loc>
+    
+    <lastmod>2022-05-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://qiaimhigh.gothub.io/2022/05/30/NodeJs/</loc>
+    
+    <lastmod>2022-05-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://qiaimhigh.gothub.io/2022/05/29/vue/</loc>
+    
+    <lastmod>2022-05-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://qiaimhigh.gothub.io/2022/05/29/cors/</loc>
+    
+    <lastmod>2022-05-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://qiaimhigh.gothub.io/myself/index.html</loc>
     
     <lastmod>2022-05-30</lastmod>
@@ -65,27 +110,9 @@
   </url>
   
   <url>
-    <loc>https://qiaimhigh.gothub.io/2022/05/29/cors/</loc>
-    
-    <lastmod>2022-05-29</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://qiaimhigh.gothub.io/2022/05/29/hello-world/</loc>
     
     <lastmod>2022-05-29</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://qiaimhigh.gothub.io/2022/05/29/vue/</loc>
-    
-    <lastmod>2022-04-19</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

@@ -1,0 +1,182 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Richie | Richie</title><meta name="author" content="Richie"><meta name="copyright" content="Richie"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="this详解this指向问题在我们研究this指向问题的时候，我们只需要知道判断this时，那个对象调用它，它就指向谁；否则就指向全局对象window，牢记这一点，我们就能很好的解决this指向问题。 1.普通函数调用当普通函数调用时，this没啥特殊意外，就是指向全局对象window。 123456let name &#x3D; &quot;Mick&quot;;function f()&amp;#123;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Richie">
+<meta property="og:url" content="https://qiaimhigh.gothub.io/2022/05/30/this%E6%8C%87%E5%90%91/index.html">
+<meta property="og:site_name" content="Richie">
+<meta property="og:description" content="this详解this指向问题在我们研究this指向问题的时候，我们只需要知道判断this时，那个对象调用它，它就指向谁；否则就指向全局对象window，牢记这一点，我们就能很好的解决this指向问题。 1.普通函数调用当普通函数调用时，this没啥特殊意外，就是指向全局对象window。 123456let name &#x3D; &quot;Mick&quot;;function f()&amp;#123;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-f67a27e2c7bac6c6b1a1123f093c074e_r.jpg?source=172ae18b">
+<meta property="article:published_time" content="2022-05-30T09:02:13.247Z">
+<meta property="article:modified_time" content="2022-05-30T09:02:41.496Z">
+<meta property="article:author" content="Richie">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic4.zhimg.com/v2-f67a27e2c7bac6c6b1a1123f093c074e_r.jpg?source=172ae18b"><link rel="shortcut icon" href="/./img/favicon.png"><link rel="canonical" href="https://qiaimhigh.gothub.io/2022/05/30/this%E6%8C%87%E5%90%91/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'mediumZoom',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Richie',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-05-30 17:02:41'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="Richie" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/./img/ioio.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/timeline/"><i class="fa-fw fa fa-bell"></i><span> 日志</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-list"></i><span> 菜单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/about"><i class="fa-fw /about/"></i><span> 0</span></a></li><li><a class="site-page child" href="/myself"><i class="fa-fw /myself/"></i><span> 1</span></a></li><li><a class="site-page child" href="/butterfly"><i class="fa-fw https://github.com/jerryc127/hexo-theme-butterfly/"></i><span> 2</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://pic4.zhimg.com/v2-f67a27e2c7bac6c6b1a1123f093c074e_r.jpg?source=172ae18b')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Richie</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/timeline/"><i class="fa-fw fa fa-bell"></i><span> 日志</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-list"></i><span> 菜单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/about"><i class="fa-fw /about/"></i><span> 0</span></a></li><li><a class="site-page child" href="/myself"><i class="fa-fw /myself/"></i><span> 1</span></a></li><li><a class="site-page child" href="/butterfly"><i class="fa-fw https://github.com/jerryc127/hexo-theme-butterfly/"></i><span> 2</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">无题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-05-30T09:02:13.247Z" title="发表于 2022-05-30 17:02:13">2022-05-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-30T09:02:41.496Z" title="更新于 2022-05-30 17:02:41">2022-05-30</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+<h2 id="this详解"><a href="#this详解" class="headerlink" title="this详解"></a>this详解</h2><h1 id="this指向问题"><a href="#this指向问题" class="headerlink" title="this指向问题"></a>this指向问题</h1><p><font color="red">在我们研究this指向问题的时候，我们只需要知道判断this时，那个对象调用它，它就指向谁；否则就指向全局对象window，牢记这一点，我们就能很好的解决this指向问题。</font></p>
+<h3 id="1-普通函数调用"><a href="#1-普通函数调用" class="headerlink" title="1.普通函数调用"></a>1.普通函数调用</h3><p>当普通函数调用时，this没啥特殊意外，就是指向全局对象window。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> name = <span class="string">&quot;Mick&quot;</span>;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">f</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>); <span class="comment">//window</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>); <span class="comment">// &#x27;undefine&#x27; 相当于window.name</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">f</span>();</span><br></pre></td></tr></table></figure>
+
+<p>上面代码中，因为函数f，没有人调用它所以f就会指向全局对象window，可能你会疑惑为什么this.name不会输出Mick，但是你仔细看一下，name定义的方式时let，不属于window对象,所以。（在这里我们需要注意一下，在es6中，新规定<strong>var，function声明的全局变量，仍然属于顶级对象的属性；使用let，const，class声明的全局变量不再属于顶层对象的属性</strong>）</p>
+<h3 id="2-对象函数调用"><a href="#2-对象函数调用" class="headerlink" title="2.对象函数调用"></a>2.对象函数调用</h3><p>这个我们只需记住一点，谁调用它，this就指向谁</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">&#x27;window&#x27;</span></span><br><span class="line"><span class="keyword">let</span> obj1 = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;obj&#x27;</span>,</span><br><span class="line">    <span class="attr">sayHi</span>: <span class="keyword">function</span>(<span class="params"></span>)  &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">sayFoo</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj1.<span class="title function_">sayHi</span>(); <span class="comment">//&quot;obj&quot;</span></span><br><span class="line">obj1.<span class="title function_">sayFoo</span>()(); <span class="comment">//&quot;window&quot;</span></span><br><span class="line"><span class="keyword">let</span> f = obj1.<span class="property">sayHi</span>;</span><br><span class="line"><span class="title function_">f</span>(); <span class="comment">//&quot;window&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>上面代码中，obj1.sayHi()的输出结果，想必我们都能理解，但是f()和obj1.sayFoo()()的输出结果，可能大家就会感到很疑惑了把，为什么都是window呢，而不是obj呢，这里我们就得想起那句很重要的话了，谁调用它，this就指向谁，否则就指向window。当我们把这句话理解了，那上面的输出结果我们就会很好理解了。</p>
+<p>在obj1.sayFoo()()这个语句中，我们可以看到，obj1调用了sayFoo()这个函数，那么为什么不输出obj呢？这里我们就得知道，sayFoo()的确是指向obj1这个对象的，但是sayFoo()这个函数会返回一个匿名函数，所以obj1.sayFoo()()这个语句就等价于了一个匿名函数f(),但是这个函数没有人调用它，所以说这里的this.name才会是window。</p>
+<p>那么f()就和上面是一样的道理，在上述语句中，我们是将obj1.sayHi这个函数的表达式，赋值给了f，此时的f就相当于是一个新的函数，其值为function()  { console.log(this.name) },当我们执行函数f的时候，会发现没有人调用它，所以它的this指向就会指向全局window，看到这里我想对象调用这个就不会难到大家了把。</p>
+<h3 id="3-箭头函数调用"><a href="#3-箭头函数调用" class="headerlink" title="3.箭头函数调用"></a>3.箭头函数调用</h3><p>这个我们就得注意了，箭头函数比较特殊，它是没有this指向的。箭头函数的this指向是继承外面的环境的，我们在研究它的this指向的时候，需要取往他的父级找，箭头函数的this指向它的父级的指向。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">&#x27;window&#x27;</span></span><br><span class="line"><span class="keyword">let</span> obj1 = &#123;</span><br><span class="line">    <span class="title class_">Ithis</span>:<span class="variable language_">this</span>,</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;obj&#x27;</span>,</span><br><span class="line">    <span class="attr">sayHi</span>: <span class="function">()=&gt;</span>  &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">sayFoo</span>:  <span class="function">()=&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="function">()=&gt;</span>&#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">sayHello</span>: <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="function">()=&gt;</span>&#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj1.<span class="property">Ithis</span>); <span class="comment">//window对象</span></span><br><span class="line">obj1.<span class="title function_">sayHi</span>(); <span class="comment">//&quot;window&quot;</span></span><br><span class="line">obj1.<span class="title function_">sayFoo</span>()();<span class="comment">//&quot;window&quot;</span></span><br><span class="line">obj1.<span class="title function_">sayHello</span>()();<span class="comment">//&quot;obj&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>上述代码中，obj1.sayHi()执行时，sayHi指向了obj1但是由于sayHI是一个箭头函数，所以它的this指向就是obj1的this指向，但是obj1的this是window对象，所以说会输出window。</p>
+<p>对于obj1.sayFoo()()这个语句，首先sayFoo函数返回一个匿名的箭头函数，该匿名箭头函数this指向的就是sayFoo函数的this，而sayFoo也是一个箭头函数，所以它的this指向window，所以返回的匿名的箭头函数this指向window</p>
+<p>obj1.sayHello()()，首先sayHello会返回一个匿名箭头函数，该函数指向的是sayHello的this，而sayHello函数是一个普通函数，并且obj1调用了它，所以会输出obj。</p>
+<h3 id="4-call、apply、bind"><a href="#4-call、apply、bind" class="headerlink" title="4. call、apply、bind"></a>4. call、apply、bind</h3><p>call、apply、bind可以改变函数内部的this指向，但由于箭头函数自身没有this，所以call、apply、bind对箭头函数是不起作用的</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">&#x27;window&#x27;</span></span><br><span class="line"><span class="keyword">let</span> obj3 = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;obj&#x27;</span>,</span><br><span class="line">  <span class="attr">sayHi</span>: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>)</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">sayFoo</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> obj4 = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;other&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line">obj3.<span class="property">sayHi</span>.<span class="title function_">call</span>(obj4) <span class="comment">// window，call对箭头函数不起作用</span></span><br><span class="line">obj3.<span class="property">sayFoo</span>.<span class="title function_">call</span>(obj4) <span class="comment">// other，call可以改变函数内部的this到指定变量</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>关于this指向的问题，我就谈就到这里，希望对大家有所帮助。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://qiaimhigh.gothub.io">Richie</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://qiaimhigh.gothub.io/2022/05/30/this%E6%8C%87%E5%90%91/">https://qiaimhigh.gothub.io/2022/05/30/this%E6%8C%87%E5%90%91/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://qiaimhigh.gothub.io" target="_blank">Richie</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://pic4.zhimg.com/v2-f67a27e2c7bac6c6b1a1123f093c074e_r.jpg?source=172ae18b" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/05/30/npm/"><img class="prev-cover" src="https://pic4.zhimg.com/v2-f67a27e2c7bac6c6b1a1123f093c074e_r.jpg?source=172ae18b" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info"></div></div></a></div><div class="next-post pull-right"><a href="/2022/05/30/NodeJs/"><img class="next-cover" src="https://n.sinaimg.cn/sinakd20116/600/w1920h1080/20201013/99db-kakmcxe5072956.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info"></div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/./img/ioio.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Richie</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/qiaimhigh"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/qiaimhigh" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:richieemail@163.com" target="_blank" title="Email"><i class="fa-solid fa-envelope"></i></a><a class="social-icon" href="https://blog.csdn.net/Spongebobna" target="_blank" title="CSDN"><i class="fa fa-book-open"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">文章中有哪些不对的地方，欢迎大家及时帮我纠正，谢谢！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#this%E8%AF%A6%E8%A7%A3"><span class="toc-number">1.</span> <span class="toc-text">this详解</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#this%E6%8C%87%E5%90%91%E9%97%AE%E9%A2%98"><span class="toc-number"></span> <span class="toc-text">this指向问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%99%AE%E9%80%9A%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8"><span class="toc-number">0.1.</span> <span class="toc-text">1.普通函数调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AF%B9%E8%B1%A1%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8"><span class="toc-number">0.2.</span> <span class="toc-text">2.对象函数调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8"><span class="toc-number">0.3.</span> <span class="toc-text">3.箭头函数调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-call%E3%80%81apply%E3%80%81bind"><span class="toc-number">0.4.</span> <span class="toc-text">4. call、apply、bind</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/05/30/npm/" title="无题"><img src="https://pic4.zhimg.com/v2-f67a27e2c7bac6c6b1a1123f093c074e_r.jpg?source=172ae18b" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/05/30/npm/" title="无题">无题</a><time datetime="2022-05-30T09:03:07.636Z" title="发表于 2022-05-30 17:03:07">2022-05-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/30/this%E6%8C%87%E5%90%91/" title="无题"><img src="https://pic4.zhimg.com/v2-f67a27e2c7bac6c6b1a1123f093c074e_r.jpg?source=172ae18b" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/05/30/this%E6%8C%87%E5%90%91/" title="无题">无题</a><time datetime="2022-05-30T09:02:13.247Z" title="发表于 2022-05-30 17:02:13">2022-05-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/30/NodeJs/" title="无题"><img src="https://n.sinaimg.cn/sinakd20116/600/w1920h1080/20201013/99db-kakmcxe5072956.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/05/30/NodeJs/" title="无题">无题</a><time datetime="2022-05-30T09:00:39.019Z" title="发表于 2022-05-30 17:00:39">2022-05-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/29/cors/" title="无题"><img src="https://n.sinaimg.cn/sinakd20116/600/w1920h1080/20201013/99db-kakmcxe5072956.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/05/29/cors/" title="无题">无题</a><time datetime="2022-05-29T08:49:00.694Z" title="发表于 2022-05-29 16:49:00">2022-05-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/29/vue/" title="无题"><img src="https://n.sinaimg.cn/sinakd20116/600/w1920h1080/20201013/99db-kakmcxe5072956.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/05/29/vue/" title="无题">无题</a><time datetime="2022-05-29T06:02:21.099Z" title="发表于 2022-05-29 14:02:21">2022-05-29</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://pic4.zhimg.com/v2-f67a27e2c7bac6c6b1a1123f093c074e_r.jpg?source=172ae18b')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Richie</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
